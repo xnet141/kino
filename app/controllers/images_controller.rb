@@ -13,6 +13,7 @@ class ImagesController < ApplicationController
 
   def show
     ewqeewqffsadfasdfasf
+    fsdfsfs
   end
 
 end
