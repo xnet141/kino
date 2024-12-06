@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecretpassword
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: pankaj
+      MYSQL_PASSWORD: secretpassword
+    ports:
+      - "3307:3306"
+  webapp:
+    build: .
+    command: bundle exec rails s -b '0.0.0.0'
+    volumes:
+      - ".:/app"
+    ports:
+      - "5000:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment: 
+      DB_USER: root    
+      DB_NAME: testdb
+      DB_PASSWORD: supersecretpassword
+      DB_HOST: db

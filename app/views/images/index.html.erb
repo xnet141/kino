@@ -1,0 +1,7 @@
+<h3>Images</h3>
+
+<% @images.each do |image| %>
+  <p><%= image.title %>
+  <p><img src="<%= image.url %>">
+  <p><%= image.text %>
+<% end %>
