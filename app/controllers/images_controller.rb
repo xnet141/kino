@@ -11,5 +11,8 @@ class ImagesController < ApplicationController
 
   end
 
+  def show
+    ewqeewqffsadfasdfasf
+  end
 
 end
